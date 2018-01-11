@@ -1,0 +1,9 @@
+
+jumbotron
+{
+  background: url('link_to_image') no-repeat center center;
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+} 
