@@ -1,12 +1,13 @@
-# flask imports
-from flask import Flask, render_template #,Response, render_template, request, redirect, url_for
-# from flask_sqlalchemy import SQLAlchemy
-# from flask.ext.heroku import Heroku
+import datetime
+from flask import Flask, Response, render_template, request, redirect
+# SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.ext.declarative import declarative_base
+# flask setup
 app = Flask(__name__)
-# heroku = Heroku(app)
-# db = SQLAlchemy(app)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./test,db'
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/test.db"
 
+db = SQLAlchemy(app)
 # class UserInfo(db.Model):
 
 # 	__tablename__ = 'users'
@@ -53,15 +54,22 @@ app = Flask(__name__)
 # # db.create_all()
 
 
-@app.route('/') #this is the login page
+@app.route('/', methods=["GET"]) #this is the login page
 def login():
+	if (request.method == 'GET'):
+		username = request.form['uname']
+		password = request.form['psw']
+		user = session.query(name).filter_by(name= uname).first()
+		if user == None or user.password != password:
+			return render_template('login.html', error = True)
+
 	return render_template("login.html")
 
 @app.route ('/signin')
 def signin():
 	return render_template("signin.html")
 
-@app.route('/index')
+@app.route('/home')
 def home():
 	print("123")
 	return render_template("home.html")

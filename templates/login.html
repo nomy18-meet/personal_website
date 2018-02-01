@@ -9,7 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>welcome</title>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
-<form method="GET">
 <style>
 body{
   background-image: url("static/images/loginbg.jpg");
@@ -36,22 +35,33 @@ body{
 #field{
   display: block;
   margin: 0 auto;
+  background-color: rgba(4, 8, 15, 0);
+  border-color: transparent;
+  border-bottom-color: rgba(4, 8, 15, 0.7);
+  width: 370px
+}
+
+#fieldhead{
+  display: block;
   text-align: center;
+  font-family: normal;
+
 }
 #bottun{
   display: block;
   margin: 0 auto;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 10%;
   -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-#bottun:hover {
-  
-  background-color: #4CAF50; /* Green */
+  transition-duration: 0.4s; 
+  background-color: #B87D4B;
   color: white;
+  font-size: 20px;
+
 
 }
+ 
+
 </style>
 </head>
 
@@ -59,27 +69,26 @@ body{
 
 <body>
   <div class="container">
-    <img src="static/images/tempicon.png" id = "logo" alt="Icon">
+    <img src="static/images/tempicon.png" id = "logo" alt="Icon"><br>
     <form id="form">
-    <label id="field" ><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" id="field" required>
+    <form method="GET">
+    <label id="fieldhead" ><b>Username</b></label>
+    <input type="text" placeholder="username" name="uname" id="field" required>
     <br>
 
-    <label id="field"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="field" required> 
+    <label id="fieldhead"><b>Password</b></label>
+    <input type="password" placeholder="password" name="psw" id="field" required> 
     <br>
 
     <button type="submit" id="bottun">Login</button>
     <label>
 
 
-      <input type="checkbox" checked="checked" id="field"> Remember me
+      <input type="checkbox" checked="checked" id="fieldhead"> Remember me
     </label>
     <br>
     
-    <button type="button" class="cancelbtn" id="field">Cancel</button>
-    <br>
-    <a href="#" id="field">to sign up</a></
+    <a href="#" id="fieldhead">to sign up</a></
     </form>
   </div>
 
