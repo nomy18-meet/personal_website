@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>recipe post</title>
 </head>
 <body>
-<form>
+<form methods="post" action="{{url_for('recipepost')}}">
   recipe's name<br>
-  <input type="text" name="reipe_name"><br>
+  <input type="text" name="Rname"><br>
   the recipe itself<br>
-  <input id="image" type="image" alt="Login" src="https://raw.githubusercontent.com/mdn/learning-area/master/html/forms/image-type-example/login.png">
 
-  <input type="text" name="itself"><br>
-  <button type="submit">SUBMIT</button>
+  <input type="text" name="content"><br>
+  pic
+  <input type="text" name="pic">
+  <button type="submit" method="post">SUBMIT</button>
 
 </form>
 

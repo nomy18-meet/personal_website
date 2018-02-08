@@ -2,19 +2,50 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>welcome</title>
+<title>home page</title>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
 
-<body>
-  
 
+<style type="text/css">
+  
+#logo{
+  margin-top: 10%;
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+
+  }
+
+ #h1{
+ 	column-gap: 40px;
+ 	column-count: 3;
+ 	column-rule-color: ;
+
+
+
+ }
+
+
+</style>
+</head>
+<body>
+{%for recipe in recipes%}
+<h2> rs
+{%endfor%}
+
+<img src="static/images/tempicon.png" id = "logo" alt="Icon">
+  <center><header> welcome to chocolate paradise!</header></center>
+  <h1 id="h1">welcome to the amazing paradise of happines and joy! in this site you will find everithing you have ever dreamed about chocolate- you will also have the oppritunity to share youre tasty chocolate recepies as well as see and rate others people recipes</h1>
+
+<div class="topnav">
+  <a class="active" href="/recipepost">POST RECIPE</a>
+  <a href="/quotes">quotes</a>
+  <a href="ao">About</a>
+</div>
 
 
 </body>
-</head>
 </html>

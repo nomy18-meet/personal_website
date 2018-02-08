@@ -30,6 +30,7 @@ body{
   margin: 0 auto;
   width: 150px;
   height: 150px;
+  border-radius: 50%;
 }
 
 #field{
@@ -48,18 +49,40 @@ body{
 
 }
 #bottun{
+  /*position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;*/
+  border: 1px #000000;
+  width:150px;
   display: block;
   margin: 0 auto;
   text-align: center;
   border-radius: 10%;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;  Safari 
   transition-duration: 0.4s; 
   background-color: #B87D4B;
   color: white;
   font-size: 20px;
+  cursor: pointer;
+
 
 
 }
+#bottun:hover{
+  background-color: black;
+  color: white;
+}
+
  
 
 </style>
@@ -69,10 +92,9 @@ body{
 
 <body>
   <div class="container">
-    <img src="static/images/tempicon.png" id = "logo" alt="Icon"><br>
-    <form id="form">
-    <form method="GET">
-    <label id="fieldhead" ><b>Username</b></label>
+    <img src="static/images/logo.jpg" id = "logo" alt="Icon"><br>
+    <form id="form" action="{{url_for('login')}}" method = "post">
+    <label id="fieldhead" ><h2><b>Username</b></label></h2>
     <input type="text" placeholder="username" name="uname" id="field" required>
     <br>
 
@@ -80,16 +102,15 @@ body{
     <input type="password" placeholder="password" name="psw" id="field" required> 
     <br>
 
-    <button type="submit" id="bottun">Login</button>
+    <button type="submit" id="bottun" >Login</button>
+
     <label>
-
-
-      <input type="checkbox" checked="checked" id="fieldhead"> Remember me
+     <input type="checkbox" checked="checked" id="fieldhead"> Remember me
     </label>
     <br>
-    
-    <a href="#" id="fieldhead">to sign up</a></
     </form>
+
+    <a href="/signin" id="bottun">Sign Up</a>
   </div>
 
     
